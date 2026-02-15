@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "chmod +x gradlew && ./gradlew clean build -x check -x test -Pproduction"
+  },
+  "deploy": {
+    "startCommand": "java $JAVA_OPTS -Dserver.port=$PORT -jar build/libs/*.jar"
+  }
+}
