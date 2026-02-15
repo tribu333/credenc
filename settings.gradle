@@ -1,1 +1,15 @@
 rootProject.name = 'tribunal'
+toolchainManagement {
+    jvm {
+        javaRepositories {
+            repository('adoptium') {
+                ivyRepo {
+                    url = 'https://github.com/adoptium/temurin21-binaries/releases/download/'
+                    pattern {
+                        artifact '/jdk-[revision]/OpenJDK21U-jdk_[classifier]_[module].[ext]'
+                    }
+                }
+            }
+        }
+    }
+}
